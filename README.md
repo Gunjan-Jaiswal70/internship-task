@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 commit 1 - project title \& description
 
 # Internship Task
@@ -35,3 +36,7 @@ Internship Task REpository
 
 Name; Gunjan Jaiswal
 Internship Task REpository
+=======
+# internship-task
+My internship task repository
+>>>>>>> f251c35 (Initial commit)
