@@ -19,6 +19,6 @@ commit 4 -How to use project
 3.Read the project details
 
 commit 5 - Author Details
-##Author details
+## Author details
 Name; Gunjan Jaiswal
 Internship Task REpository
