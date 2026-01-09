@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 commit 1 - project title \& description
 
 # Internship Task
@@ -36,7 +36,16 @@ Internship Task REpository
 
 Name; Gunjan Jaiswal
 Internship Task REpository
-=======
+
 # internship-task
+
 My internship task repository
->>>>>>> f251c35 (Initial commit)
+ HEAD
+ f251c35 (Initial commit)
+
+
+This line is added from develop branch
+
+
+
+ 6adbe79 (Update README from develop branch)
