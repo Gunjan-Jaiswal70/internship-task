@@ -47,4 +47,5 @@ This line is added from develop branch.
 
 ## Treasure Hunt
 Step 1: Created treasure hunt branch
+Step 2: Followed a fake trail
 
