@@ -49,5 +49,6 @@ This line is added from develop branch.
 Step 1: Created treasure hunt branch
 Step 2: Followed a fake trail
 Step 3: Found a hidden clue behind commits
+Bonus Clue: Found an alternate path
 
 
