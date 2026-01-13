@@ -46,8 +46,10 @@ My internship task repository
 
 This line is added from develop branch
 
-
-
  6adbe79 (Update README from develop branch)
 
 Feature login work started
+
+##login feature updates
+added login validation logic
+updated user interface for login screen
