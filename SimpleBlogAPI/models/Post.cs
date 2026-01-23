@@ -1,3 +1,5 @@
+using System;
+
 namespace SimpleBlogAPI.Models
 {
     public class Post

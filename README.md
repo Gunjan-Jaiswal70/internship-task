@@ -53,3 +53,12 @@ Feature login work started
 ##login feature updates
 added login validation logic
 updated user interface for login screen
+
+##SimpleBlogAPI 
+A RESTful API built with **ASP.NET Core** for managing blog posts.
+##features
+**CRUD Operation**
+**DTOs**
+**testing**
+##proof of work
+Testing screenshorts are available in the `/Screenshorts ` folder.

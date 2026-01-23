@@ -1,41 +1,52 @@
 using Microsoft.AspNetCore.Mvc;
 using SimpleBlogAPI.Models;
+using SimpleBlogAPI.DTOs;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace SimpleBlogAPI.Controllers
+namespace SimpleBlogAPI.controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
-    public class PostsController : ControllerBase
+    [ApiController]
+    public class PostController : ControllerBase
     {
-        // Temporary list to store posts
-        private static List<Post> _posts = new List<Post>
-        {
-            new Post 
-            { 
-                Id = 1, 
-                Title = "My First Post", 
-                Content = "Welcome to my API!", 
-                Author = "Gunjan" 
-            }
-        };
+        private static List<Post> _posts = new List<Post>();
+        private static int _nextId = 1;
 
-        // 1. GET: api/posts (Saare posts dekhne ke liye)
         [HttpGet]
-        public ActionResult<IEnumerable<Post>> GetPosts()
+        public IActionResult GetPosts()
         {
-            return Ok(_posts);
+            return Ok(_posts); 
         }
 
-        // 2. POST: api/posts (Naya post add karne ke liye)
+        [HttpGet("{id}")]
+        public IActionResult GetPost(int id)
+        {
+            var post = _posts.FirstOrDefault(p => p.Id == id);
+            if (post == null) return NotFound(); 
+            return Ok(post);
+        }
+
         [HttpPost]
-        public ActionResult<Post> CreatePost(Post newPost)
+        public IActionResult CreatePost([FromBody] CreatePostDto postDto)
         {
-            newPost.Id = _posts.Max(p => p.Id) + 1; // Auto ID generator
+            if (string.IsNullOrEmpty(postDto.Title) || string.IsNullOrEmpty(postDto.Content))
+            {
+                return BadRequest("Title aur Content dono zaroori hain!"); 
+            }
+            var newPost = new Post
+            {
+                Id = _nextId++,
+                Title = postDto.Title,
+                Content = postDto.Content,
+                CreatedAt = DateTime.Now
+            };
+
             _posts.Add(newPost);
-            return CreatedAtAction(nameof(GetPosts), new { id = newPost.Id }, newPost);
+            
+            return CreatedAtAction(nameof(GetPost), new { id = newPost.Id }, newPost);
         }
 
-        // 3. DELETE: api/posts/{id} (Post delete karne ke liye)
         [HttpDelete("{id}")]
         public IActionResult DeletePost(int id)
         {
@@ -43,7 +54,7 @@ namespace SimpleBlogAPI.Controllers
             if (post == null) return NotFound();
 
             _posts.Remove(post);
-            return NoContent();
+            return NoContent(); 
         }
     }
 }
