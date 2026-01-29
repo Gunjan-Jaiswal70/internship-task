@@ -32,7 +32,7 @@ commit 5 - Author Details
 ## Author details
 
 Name; Gunjan Jaiswal
-Internship Task REpository
+Internship Task Repository
 
 Name; Gunjan Jaiswal
 Internship Task REpository
